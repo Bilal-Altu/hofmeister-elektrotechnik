@@ -1,0 +1,3 @@
+# Vorschau – nicht indexieren. Beim Livegang: Disallow leeren und Sitemap angeben.
+User-agent: *
+Disallow: /
