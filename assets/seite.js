@@ -17,6 +17,39 @@
     window.matchMedia("(min-width: 1061px)").addEventListener("change", function (m) { if (m.matches) setzen(false); });
   }
 
+
+  /* Versand an kontakt.php – SideTwo-Kontaktformular-Standard (nie über die Mail-App) */
+  function stSenden(form, betreff, melden) {
+    var daten = new FormData(form);
+    if (betreff) daten.set("betreff", betreff);
+    var knopf = form.querySelector('[type="submit"]');
+    if (knopf) knopf.disabled = true;
+    if (!melden) {
+      var st = form.querySelector(".st-status");
+      if (!st) {
+        st = document.createElement("p");
+        st.className = "st-status";
+        st.setAttribute("role", "status");
+        st.setAttribute("aria-live", "polite");
+        st.style.marginTop = "12px";
+        st.style.fontWeight = "600";
+        form.appendChild(st);
+      }
+      melden = function (ok, text) { st.textContent = text; };
+    }
+    return fetch(form.getAttribute("action") || "kontakt.php", {
+      method: "POST", body: daten, headers: { "X-Requested-With": "fetch" }, credentials: "same-origin"
+    })
+      .then(function (r) { return r.json(); })
+      .catch(function () { return { ok: false, text: "Das Formular konnte gerade nicht gesendet werden. Bitte rufen Sie uns kurz an." }; })
+      .then(function (a) {
+        if (knopf) knopf.disabled = !!a.ok;
+        melden(!!a.ok, a.text);
+        if (a.ok) form.reset();
+        return a;
+      });
+  }
+
   /* ---------- Anfrageformular ---------- */
   var form = document.querySelector(".formular");
   if (!form) return;
@@ -38,6 +71,6 @@
     if (f.email.value.trim()) zeilen.push("E-Mail: " + f.email.value.trim());
     if (f.ort.value.trim()) zeilen.push("Ort: " + f.ort.value.trim());
     var betreff = "Anfrage über die Website: " + thema + (f.ort.value.trim() ? " in " + f.ort.value.trim() : "");
-    location.href = "mailto:" + form.dataset.mail + "?subject=" + encodeURIComponent(betreff) + "&body=" + encodeURIComponent(zeilen.join("\n"));
+    stSenden(form, betreff);
   });
 })();

@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="../bilder/signet-180.png">
 <link rel="preload" href="../schrift/mona-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/stil.css?v=8fc692ea">
-<script src="../assets/seite.js?v=8d991d35" defer></script>
+<script src="../assets/seite.js?v=d75bc661" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -99,9 +99,10 @@
 <section class="rahmen anfrage" id="anfrage" aria-labelledby="anfrage-titel">
   <div class="anfrage__kopf">
     <h2 class="mittel" id="anfrage-titel">Oder schreiben Sie mir</h2>
-    <p>Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Nachricht. Über diese Website wird nichts gespeichert.</p>
+    <p>Ihre Anfrage geht direkt per E-Mail an mich – auf der Website wird nichts gespeichert.</p>
   </div>
-  <form class="formular" data-mail="nh-elektrotechnik@t-online.de">
+  <form class="formular" action="../kontakt.php" method="post">
+<div class="st-falle" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Bitte leer lassen <input name="webseite" type="text" tabindex="-1" autocomplete="off"></label></div>
     <label>Ihr Name<input name="name" autocomplete="name" required></label>
     <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
     <label><span>E-Mail <span class="optional">(freiwillig)</span></span><input name="email" type="email" autocomplete="email"></label>

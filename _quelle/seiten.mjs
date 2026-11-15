@@ -325,9 +325,10 @@ function kontakt(k) {
 <section class="rahmen anfrage" id="anfrage" aria-labelledby="anfrage-titel">
   <div class="anfrage__kopf">
     <h2 class="mittel" id="anfrage-titel">Oder schreiben Sie mir</h2>
-    <p>Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Nachricht. Über diese Website wird nichts gespeichert.</p>
+    <p>Ihre Anfrage geht direkt per E-Mail an mich – auf der Website wird nichts gespeichert.</p>
   </div>
-  <form class="formular" data-mail="${BETRIEB.mail}">
+  <form class="formular" action="../kontakt.php" method="post">
+<div class="st-falle" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Bitte leer lassen <input name="webseite" type="text" tabindex="-1" autocomplete="off"></label></div>
     <label>Ihr Name<input name="name" autocomplete="name" required></label>
     <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
     <label><span>E-Mail <span class="optional">(freiwillig)</span></span><input name="email" type="email" autocomplete="email"></label>
@@ -400,7 +401,7 @@ function datenschutz(k) {
   <p>Die Website wird bei einem Hosting-Anbieter in Deutschland betrieben. Beim Aufruf speichert der Server automatisch Angaben, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browser und Betriebssystem. Das ist nötig, um die Seite sicher und fehlerfrei auszuliefern (Art. 6 Abs. 1 lit. f DSGVO). Die Protokolle werden gelöscht, sobald sie dafür nicht mehr gebraucht werden. Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung.</p>
 
   <h2>Kontakt per Telefon, E-Mail oder Formular</h2>
-  <p>Wenn Sie mich anrufen oder mir schreiben, verarbeite ich Ihre Angaben, um Ihre Anfrage zu beantworten und gegebenenfalls einen Auftrag vorzubereiten (Art. 6 Abs. 1 lit. b DSGVO). Das Formular auf der Kontaktseite verschickt selbst nichts: Es öffnet Ihr eigenes E-Mail-Programm mit der fertigen Nachricht, und Sie entscheiden, ob Sie sie absenden. Ich lösche Anfragen, wenn sie erledigt sind und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+  <p>Wenn Sie mich anrufen oder mir schreiben, verarbeite ich Ihre Angaben, um Ihre Anfrage zu beantworten und gegebenenfalls einen Auftrag vorzubereiten (Art. 6 Abs. 1 lit. b DSGVO). Wenn Sie das Anfrageformular nutzen, werden Ihre Angaben an meinen Webserver übertragen und von dort per E-Mail an mich weitergeleitet. Ich verwende sie ausschließlich zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO); ein externer Dienst wird dafür nicht eingesetzt. Zum Schutz vor Missbrauch wird ein nicht umkehrbarer Hashwert Ihrer IP-Adresse höchstens eine Stunde lang gespeichert, um zu viele Anfragen in kurzer Zeit zu begrenzen (Art. 6 Abs. 1 lit. f DSGVO). Beim Absenden wird außerdem ein technisch notwendiges Sitzungs-Cookie gesetzt, das doppelte Absendungen verhindert; es wird beim Schließen des Browsers gelöscht. Ich lösche Anfragen, wenn sie erledigt sind und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
 
   <h2>Ihre Rechte</h2>
   <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine formlose Nachricht an die oben genannte Adresse genügt.</p>
