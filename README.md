@@ -33,7 +33,7 @@ Die HTML-Dateien werden erzeugt – nie von Hand ändern. Inhalte: `_quelle/seit
 `_quelle/leistungen.mjs`, Stammdaten und Planzeichen: `_quelle/helfer.mjs`, Karte: `_quelle/karte.mjs`.
 CSS/JS bekommen die Prüfsumme als `?v=` automatisch.
 
-Werkzeuge außerhalb des Repos in `Desktop\Hofmeister\`: `quelle\` (Originale der alten Seite),
+Werkzeuge außerhalb des Repos in `Desktop\sideTwo Projekte\Website Kunden\hofmeister-elektrotechnik\_material\`: `quelle\` (Originale der alten Seite),
 `werkzeug\bilder-bauen.sh` (AVIF + WebP, bricht ab, wenn ein Bild größer als seine Vorlage würde),
 `werkzeug\karte-daten.mjs` (OSM-Daten → `_quelle/karte-daten.json`), `werkzeug\schirm.sh`
 (Edge-Bildschirmfotos). Lokal: launch.json „hofmeister“, Port 4780, Adresse `/hofmeister/index.html`.

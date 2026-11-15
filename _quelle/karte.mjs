@@ -1,5 +1,5 @@
 // Einsatzgebiet als eigene Zeichnung: 30 km um den Betrieb, Rhein und Neckar, Orte mit Entfernung.
-// Daten: karte-daten.json (erzeugt mit Desktop/Hofmeister/werkzeug/karte-daten.mjs aus OpenStreetMap).
+// Daten: karte-daten.json (erzeugt mit Desktop/sideTwo Projekte/Website Kunden/hofmeister-elektrotechnik/_material/werkzeug/karte-daten.mjs aus OpenStreetMap).
 // Einheit im SVG: 1 = 100 m, Mitte = Frankensteinstraße 5.
 import fs from "node:fs";
 import path from "node:path";
